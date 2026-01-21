@@ -5,7 +5,25 @@ document.addEventListener('DOMContentLoaded', () => {
     initCinematicScroll();
     initSmoothAnchors();
     initCountUp();
+    initNavColor();
 });
+
+function initNavColor() {
+    const nav = document.querySelector('.nav');
+    const hero = document.querySelector('.hero');
+    
+    function checkScroll() {
+        const heroBottom = hero.offsetHeight;
+        if (window.scrollY > heroBottom - 100) {
+            nav.classList.add('dark');
+        } else {
+            nav.classList.remove('dark');
+        }
+    }
+    
+    window.addEventListener('scroll', checkScroll);
+    checkScroll();
+}
 
 function initCinematicScroll() {
     const animElements = document.querySelectorAll('.anim');
@@ -23,13 +41,22 @@ function initCinematicScroll() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Add delay for staggered items
-                const siblings = entry.target.parentElement.querySelectorAll('.anim');
-                let index = Array.from(siblings).indexOf(entry.target);
-                
-                setTimeout(() => {
-                    entry.target.classList.add('in');
-                }, index * 120);
+                // Check if it's an area item for special stagger
+                if (entry.target.classList.contains('area-item')) {
+                    const allAreas = document.querySelectorAll('.area-item');
+                    const index = Array.from(allAreas).indexOf(entry.target);
+                    setTimeout(() => {
+                        entry.target.classList.add('in');
+                    }, index * 150);
+                } else {
+                    // Regular stagger for other elements
+                    const siblings = entry.target.parentElement.querySelectorAll('.anim');
+                    let index = Array.from(siblings).indexOf(entry.target);
+                    
+                    setTimeout(() => {
+                        entry.target.classList.add('in');
+                    }, index * 120);
+                }
             }
         });
     }, {
