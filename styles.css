@@ -36,9 +36,9 @@ body {
 
 .anim {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1.8s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(50px);
+    transition: opacity 2.4s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 2.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .anim.in {
@@ -390,8 +390,8 @@ h2 {
     font-size: 18px;
     font-weight: 400;
     color: var(--text-soft);
-    transition: opacity 1.6s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity 2.4s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 2.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .area-item.in {

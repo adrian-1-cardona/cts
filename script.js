@@ -47,7 +47,7 @@ function initCinematicScroll() {
                     const index = Array.from(allAreas).indexOf(entry.target);
                     setTimeout(() => {
                         entry.target.classList.add('in');
-                    }, index * 150);
+                    }, index * 200);
                 } else {
                     // Regular stagger for other elements
                     const siblings = entry.target.parentElement.querySelectorAll('.anim');
@@ -55,7 +55,7 @@ function initCinematicScroll() {
                     
                     setTimeout(() => {
                         entry.target.classList.add('in');
-                    }, index * 120);
+                    }, index * 180);
                 }
             }
         });
