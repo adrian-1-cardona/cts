@@ -7,7 +7,24 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initNavigation();
     initButtonEffects();
+    initNavbarScroll();
 });
+
+// ============================================
+// NAVBAR SCROLL EFFECT
+// ============================================
+
+function initNavbarScroll() {
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+}
 
 // ============================================
 // SCROLL ANIMATIONS - FADE IN ON SCROLL

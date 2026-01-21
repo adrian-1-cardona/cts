@@ -117,21 +117,22 @@ body {
    ============================================ */
 
 .navbar {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(30px);
-    border-bottom: 1px solid var(--border);
-    position: sticky;
+    background: none;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    position: absolute;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.4s ease;
 }
 
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 30px;
+    padding: 1.5rem 30px;
 }
 
 .logo {
@@ -150,7 +151,7 @@ body {
 }
 
 .logo-text {
-    color: var(--primary);
+    color: var(--secondary);
 }
 
 .nav-links {
@@ -161,26 +162,14 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--primary);
+    color: var(--secondary);
     font-weight: 500;
     font-size: 0.95rem;
-    position: relative;
-    transition: color 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--accent);
-    transition: width 0.4s ease;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
+.nav-links a:hover {
+    opacity: 0.7;
 }
 
 .hamburger {
